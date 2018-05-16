@@ -3,7 +3,8 @@ import { Switch, Route } from'react-router-dom'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import Store, { history } from './store/Store'
-//import Dashboard from './dashboard/components/Dashboard'
+import DashboardUser from './dashboard/components/DashboardUser'
+import DashboardAdmin from './dashboard/components/DashboardAdmin'
 import Nav from './home/components/Nav'
 import Login from './home/components/Login'
 
@@ -16,7 +17,9 @@ export const Routes = () => {
                         <Nav/>
                     </div>
                     <Switch>
-                        <Route path='/' component={Login}/>
+                        <Route exact path='/' component={Login}/>
+                        <Route path='/account/user' component={DashboardUser}/>
+                        <Route path='/account/admin' component={DashboardAdmin}/>
                     </Switch>
                 </div>
             </ConnectedRouter>
