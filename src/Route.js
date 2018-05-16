@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import Store, { history } from './store/Store'
 //import Dashboard from './dashboard/components/Dashboard'
-//import Nav from './home/components/Nav'
+import Nav from './home/components/Nav'
 import Login from './home/components/Login'
 
 export const Routes = () => {
@@ -12,7 +12,12 @@ export const Routes = () => {
         <Provider store={Store}>
             <ConnectedRouter history={history}>
                 <div>
-                    <Route path='/' component={Login}/>
+                    <div>
+                        <Nav/>
+                    </div>
+                    <Switch>
+                        <Route path='/' component={Login}/>
+                    </Switch>
                 </div>
             </ConnectedRouter>
         </Provider>

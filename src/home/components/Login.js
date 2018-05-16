@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import Store from '../../store/Store'
+import '../../css/login.css'
+
+const $ = window.$
 
 class Login extends Component {
 
@@ -27,7 +30,7 @@ class Login extends Component {
                     <div className='col s6'>
                         <div className='row'>
                             <div className='input-field col s6 offset-s3 center'>
-                                <img className='responsive-img' src='images/logo_title_pole_emploi.png'/>
+                                <img className='responsive-img' src='images/logo_pole_emploi.png'/>
                             </div>
                         </div>
                     </div>
@@ -39,25 +42,21 @@ class Login extends Component {
                             <form className='col s12'>
                                 <div className='row no-margin-h'>
                                     <div className='input-field col s12'>
-                                        <input id='email' data-mode='email' ref='email' type='email' className='validate' onChange={this.handleChanges}/>
-                                        <label htmlFor='email' className='valign-wrapper'>
-                                            <i className='material-icons'>person</i>
-                                            Email
-                                        </label>
+                                        <i className='material-icons prefix .input-field label'>account_circle</i>
+                                        <input id='login' type='text' className='validate' onChange={this.handleChanges}/>
+                                        <label htmlFor='login'>Identifiant</label>
                                     </div>
                                 </div>
                                 <div className='row no-margin-h'>
                                     <div className='input-field col s12'>
-                                        <input id='password' data-mode='password' ref='password' type='password' className='validate' onChange={this.handleChanges}/>
-                                        <label htmlFor='password' className='valign-wrapper'>
-                                            <i className='material-icons'>lock_outline</i>
-                                            Password
-                                        </label>
+                                        <i className='material-icons prefix .input-field label'>lock_outline</i>
+                                        <input id='password' type='password' className='validate' onChange={this.handleChanges}/>
+                                        <label htmlFor='password' className='valign-wrapper'>Mot De Passe</label>
                                     </div>
                                 </div>
                                 <div className='row no-margin-h'>
                                     <div className='col s12 center-align'>
-                                        <button type='submit' className='btn waves-effect waves-light' onClick={this.onLogin}>
+                                        <button type='submit' className='btn waves-effect waves-light color-button' onClick={this.onLogin}>
                                             <i className='material-icons right'>send</i>
                                             Sign-In
                                         </button>
