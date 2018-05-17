@@ -1,7 +1,7 @@
 .borderForm{
   border: 1px solid lightgrey;
   border-radius: 15px;
-  margin-top: 5%;
+  margin-top: 10px !important;
 }
 
 .waves-effect.waves-light.btn-large.col.s12.first{
