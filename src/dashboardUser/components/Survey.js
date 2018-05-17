@@ -1,6 +1,16 @@
 import React, { Component } from 'react'
+import '../../css/survey.css'
 
 class Survey extends Component {
+  componentDidMount() {
+        this.props.timer.start()
+    }
+
+    stopTimer() {
+        console.log(this.props.location.pathname)
+        this.props.timer.stop(this.props.location.pathname)
+        this.props.history.push('/account/user')
+    }
 
     render() {
         return (

@@ -1,5 +1,25 @@
-.menu {
-    border: 1px solid lightgrey;
-    border-radius: 15px;
-    margin-top: 2%;
+.borderForm{
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+  margin-top: 5%;
+}
+
+.waves-effect.waves-light.btn-large.col.s12.first{
+  margin: 10% auto 10% auto;
+}
+
+.waves-effect.waves-light.btn-large.col.s12.second{
+  margin: 0 auto 10% auto;
+}
+
+.waves-effect.waves-light.btn-large.col.s12.third{
+  margin: 0 auto 10% auto;
+}
+
+.waves-effect.waves-light.btn-large.col.s12.last{
+  margin: 0 auto 10% auto;
+}
+
+.btn:hover, .btn-large:hover, .btn-small:hover{
+  background-color: #1B2B66;
 }

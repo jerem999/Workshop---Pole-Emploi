@@ -1,32 +1,15 @@
 import React, { Component } from 'react'
-import '../../css/nav.css'
-
-let time
-const timer = {
-    start: () => {
-        time = Date.now()
-    },
-    stop: () => {
-        const finalTime = new Date(Date.now() - time)
-        const res = {
-            minutes: finalTime.getMinutes(),
-            seconds: finalTime.getSeconds()
-        }
-        console.log(res)
-        time = Date.now()
-    }
-}
+import '../../css/file.css'
 
 class File extends Component {
-
-
-    componentDidMount() {
-        //this.props.timer.start()
+  componentDidMount() {
+        this.props.timer.start()
     }
-  
+
     stopTimer() {
+        console.log(this.props.location.pathname)
+        this.props.timer.stop(this.props.location.pathname)
         this.props.history.push('/account/user')
-        this.props.timer.stop()
     }
 
     render() {
@@ -44,7 +27,7 @@ class File extends Component {
                     </div>
                 </nav>
                 <div className='row'>
-                    <form className='col s4 offset-s4' style={{border: '1px solid lightgrey', borderRadius: '15px', marginTop: '2%'}}>
+                    <form className='col s4 offset-s4 borderForm'>
                         <p>Veuillez transmettre vos documents</p>
                         <div className='file-field input-field'>
                             <div className='btn'>
@@ -55,7 +38,7 @@ class File extends Component {
                                 <input className='file-path validate' type='text' placeholder='Importer un document'/>
                             </div>
                         </div>
-                        <button className='btn waves-effect waves-light' onClick={this.stopTimer.bind(this)} type='submit' name='action' style={{background:'#1B2B66', padding:'2%', margin: '0 0 8px 0'}}>Submit
+                        <button className='btn waves-effect waves-light' onClick={this.stopTimer.bind(this)} type='submit' name='action'>Submit
                             <i className='material-icons right'>send</i>
                         </button>
                     </form>
