@@ -16,6 +16,14 @@ class DashboardAdmin extends Component {
   }
 
   getOption = () => {
+    const arrayAxis = []
+    const arrayLegend = []
+    const dataAxis = this.props.average.map(o => {
+      return arrayAxis.push(o.type)
+    })
+    const dataLegend = this.props.average.map(o => {
+      return arrayLegend.push(o.average)
+    })
     return {
       title: {
           text: 'ECharts entry example'
@@ -25,13 +33,13 @@ class DashboardAdmin extends Component {
           data:['Sales']
       },
       xAxis: {
-          data: ["Formulaire","Importer","Questionnaire"]
+          data: arrayAxis
       },
       yAxis: {},
       series: [{
           name: 'temps',
           type: 'bar',
-          data: [5, 20, 36]
+          data: arrayLegend
       }]
     }
   }
