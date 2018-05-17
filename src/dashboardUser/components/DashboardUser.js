@@ -36,7 +36,7 @@ class DashboardUser extends Component {
                         <a className='waves-effect waves-light btn-large col s12' style={{background:'#1B2B66', margin:'10% auto 10% auto'}} onClick={ () => {
                             this.startTimer.bind(this)
                             this.incrementNbClic()
-                        } } href='#'>Test</a>
+                        } }>Test</a>
                     </div>
                 </div>
             </div>
