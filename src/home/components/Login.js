@@ -45,11 +45,6 @@ class Login extends Component {
     render() {
         return(
             <div>
-                <nav>
-                    <div className='nav-wrapper nav-bar'>
-                        <a href='#' className='brand-logo center'><img className='responsive-img logo-center' src='images/logoPopol.png'/></a>
-                    </div>
-                </nav>
                 <div className='login-page row'>
                     <div>
                         <div className='col s6'>
@@ -90,7 +85,7 @@ class Login extends Component {
                                 </form>
                             </div>
                         </div>
-                    </div>     
+                    </div>
                 </div>
             </div>
         )

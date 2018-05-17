@@ -48,21 +48,13 @@ class DashboardAdmin extends Component {
     console.log(this.props.average)
     return (
       <div>
-        <nav>
-          <div className='nav-wrapper nav-bar'>
-            <a href='#' className='brand-logo center'><img className='responsive-img logo-center' src='images/logoPopol.png'/></a>
-              <ul id='nav-mobile' className='right hide-on-med-and-down'>
-                <li><a className='nav-color-text' href='#'>Déconnexion</a></li>
-              </ul>
-          </div>
-        </nav>
-        <h3>Temps jusqu'à validation (en seconde)</h3>
+        <h3>Temps jusquà validation (en seconde)</h3>
         <ReactEchartsCore
           echarts={echarts}
           option={this.getOption()}
           notMerge={true}
           lazyUpdate={true}
-          theme={"theme_name"}
+          theme={'theme_name'}
           onChartReady={this.onChartReadyCallback}
           opts={{renderer: 'svg'}}
         />
