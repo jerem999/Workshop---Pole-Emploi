@@ -44,47 +44,54 @@ class Login extends Component {
 
     render() {
         return(
-            <div className='login-page row'>
-                <div>
-                    <div className='col s6'>
-                        <div className='row'>
-                            <div className='input-field col s6 offset-s3 center'>
-                                <img className='responsive-img' src='images/logo_pole_emploi.png'/>
+            <div>
+                <nav>
+                    <div className='nav-wrapper nav-bar'>
+                        <a href='#' className='brand-logo center'><img className='responsive-img logo-center' src='images/logoPopol.png'/></a>
+                    </div>
+                </nav>
+                <div className='login-page row'>
+                    <div>
+                        <div className='col s6'>
+                            <div className='row'>
+                                <div className='input-field col s6 offset-s3 center'>
+                                    <img className='responsive-img' src='images/logo_pole_emploi.png'/>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div>
-                <div style={{ marginBottom: '100px'}}/>
-                    <div className='col s4'>
-                        <div className='row s12'>
-                            <form className='col s12'>
-                                <div className='row no-margin-h'>
-                                    <div className='input-field col s12'>
-                                        <i className='material-icons prefix .input-field label'>account_circle</i>
-                                        <input id='login' type='text' className='validate' onChange={(e) => this.onChange('login', e)}/>
-                                        <label htmlFor='login'>Identifiant</label>
+                    <div>
+                    <div style={{ marginBottom: '100px'}}/>
+                        <div className='col s4'>
+                            <div className='row s12'>
+                                <form className='col s12'>
+                                    <div className='row no-margin-h'>
+                                        <div className='input-field col s12'>
+                                            <i className='material-icons prefix .input-field label'>account_circle</i>
+                                            <input id='login' type='text' className='validate' onChange={(e) => this.onChange('login', e)}/>
+                                            <label htmlFor='login'>Identifiant</label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className='row no-margin-h'>
-                                    <div className='input-field col s12'>
-                                        <i className='material-icons prefix .input-field label'>lock_outline</i>
-                                        <input id='password' type='password' className='validate' onChange={(e) => this.onChange('password', e)}/>
-                                        <label htmlFor='password' className='valign-wrapper'>Mot De Passe</label>
+                                    <div className='row no-margin-h'>
+                                        <div className='input-field col s12'>
+                                            <i className='material-icons prefix .input-field label'>lock_outline</i>
+                                            <input id='password' type='password' className='validate' onChange={(e) => this.onChange('password', e)}/>
+                                            <label htmlFor='password' className='valign-wrapper'>Mot De Passe</label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className='row no-margin-h'>
-                                    <div className='col s12 center-align'>
-                                        <button type='submit' className='btn waves-effect waves-light color-button' onClick={this.connectToken}>
-                                            <i className='material-icons right'>send</i>
-                                            Sign-In
-                                        </button>
+                                    <div className='row no-margin-h'>
+                                        <div className='col s12 center-align'>
+                                            <button type='submit' className='btn waves-effect waves-light color-button' onClick={this.connectToken}>
+                                                <i className='material-icons right'>send</i>
+                                                Sign-In
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                </div>     
+                    </div>     
+                </div>
             </div>
         )
     }
