@@ -3,23 +3,18 @@ import thunk from 'redux-thunk'
 import { combineReducers, createStore, compose, applyMiddleware } from 'redux'
 import createHistory from 'history/createHashHistory'
 import { routerReducer, routerMiddleware } from 'react-router-redux'
-//import { DashboardReducer, DashboardStore } from '../dashboard/reducer/DashboardReducer'
-//import { HomeReducer, HomeStore } from '../Home/reducer/HomeReducer'
-//import { LookerReducer, LookerStore } from '../Admin/reducer/LookerReducer'
+import { DashboardAdminReducer, DashboardAdminReducerStore } from '../dashboardAdmin/reducers/DashboardAdminReducer'
+
 const reducer = combineReducers({
-    /*DashboardReducer,
-    HomeReducer,
-    LookerReducer,*/
+    DashboardAdminReducer,
     routing: routerReducer
 })
 
 export const history = createHistory()
 
-const Store = createStore(reducer, /*{
-        DashboardReducer: DashboardStore,
-        HomeReducer: HomeStore,
-        LookerReducer: LookerStore
-    },*/ compose(
+const Store = createStore(reducer, {
+        DashboardAdminReducer: DashboardAdminReducerStore
+    }, compose(
         applyMiddleware(thunk, routerMiddleware(history), logger)
 ))
 

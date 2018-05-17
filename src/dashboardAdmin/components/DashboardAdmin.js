@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
-// import the core library.
 import ReactEchartsCore from 'echarts-for-react/lib/core'
-// then import echarts modules those you have used manually.
 import echarts from 'echarts/lib/echarts'
 import 'echarts/lib/chart/bar'
 import 'echarts/lib/component/tooltip'
 import '../../css/dashboardAdmin.css'
+import DashboardAdminAction from '../actions/DashboardAdminAction'
+import DashboardAdminDto from '../dto/DashboardAdminDto'
+import Store from '../../store/Store'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 class DashboardAdmin extends Component {
+  componentWillMount() {
+    Store.dispatch(DashboardAdminAction.fetchAverage())
+  }
 
   getOption = () => {
     return {
@@ -19,21 +25,22 @@ class DashboardAdmin extends Component {
           data:['Sales']
       },
       xAxis: {
-          data: ["shirt","cardign","chiffon shirt","pants","heels","socks"]
+          data: ["Formulaire","Importer","Questionnaire"]
       },
       yAxis: {},
       series: [{
-          name: 'Sales',
+          name: 'temps',
           type: 'bar',
-          data: [5, 20, 36, 10, 10, 20]
+          data: [5, 20, 36]
       }]
     }
   }
 
   render() {
+    console.log(this.props.average)
     return (
       <div>
-        <h3>Suivi</h3>
+        <h3>Temps jusqu'à validation (en seconde)</h3>
         <ReactEchartsCore
           echarts={echarts}
           option={this.getOption()}
@@ -48,4 +55,14 @@ class DashboardAdmin extends Component {
   }
 }
 
-export default DashboardAdmin
+DashboardAdmin.propTypes = {
+  average: PropTypes.instanceOf(DashboardAdminDto)
+}
+
+const mapStateToProps = store => {
+  return {
+    average: store.DashboardAdminReducer.average
+  }
+}
+
+export default connect(mapStateToProps)(DashboardAdmin)
