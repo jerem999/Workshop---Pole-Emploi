@@ -7,12 +7,12 @@ class Form extends Component {
         this.state = { value: 0 }
         this._increase()
     }
-    
+
     _increase() {
         this.setState({ value: this.state.value + 1 })
         setTimeout(this._increase.bind(this), 1000)
     }
-    
+
     componentDidMount() {
         this.props.timer.start()
     }
@@ -26,11 +26,11 @@ class Form extends Component {
     render() {
         console.log(this.state.value)
         if (this.state.value===10) {
-            alert('remplissez')
+            alert('Veuillez finir de completer avant de valider')
             this.state.value = 11
         }
         if (this.state.value===20) {
-            alert('hotesse')
+            alert('Une hôtesse à été prévenu de vos erreurs et va venir vous aider')
             this.state.value = 21
         }
         return (

@@ -7,7 +7,7 @@ class Survey extends Component {
         this.state = { value: 0 }
         this._increase()
     }
-    
+
     _increase() {
         this.setState({ value: this.state.value + 1 })
         setTimeout(this._increase.bind(this), 1000)
@@ -26,11 +26,11 @@ class Survey extends Component {
     render() {
         console.log(this.state.value)
         if (this.state.value===10) {
-            alert('remplissez')
+            alert('Veuillez finir de remplir le questionnaire avant de pouvoir continuer')
             this.state.value = 11
         }
         if (this.state.value===20) {
-            alert('hotesse')
+            alert('Une hôtesse à été prévenu de vos erreurs et va venir vous aider')
             this.state.value = 21
         }
         return (
@@ -63,7 +63,7 @@ class Survey extends Component {
                                         <span>Non</span>
                                     </label>
                                 </p>
-                                <p>Avez-vous déjà vu Jérémy?</p>
+                                <p>Êtes-vous en situation de handicap?</p>
                                 <p>
                                     <label>
                                         <input name="group2" type="radio" />
