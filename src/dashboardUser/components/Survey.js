@@ -20,7 +20,7 @@ class Survey extends Component {
     stopTimer() {
         console.log(this.props.location.pathname)
         this.props.timer.stop(this.props.location.pathname)
-        {/*this.props.history.push('/account/user')*/}
+        this.props.history.push('/account/user')
     }
 
     render() {
@@ -53,7 +53,7 @@ class Survey extends Component {
                                 <p>Avez-vous déjà travaillé?</p>
                                 <p>
                                     <label>
-                                        <input name="group1" type="radio" required/>
+                                        <input name="group1" type="radio"/>
                                         <span>Oui</span>
                                     </label>
                                 </p>
@@ -66,7 +66,7 @@ class Survey extends Component {
                                 <p>Êtes-vous en situation de handicap?</p>
                                 <p>
                                     <label>
-                                        <input name="group2" type="radio" required/>
+                                        <input name="group2" type="radio"/>
                                         <span>Oui</span>
                                     </label>
                                 </p>
@@ -78,7 +78,7 @@ class Survey extends Component {
                                 </p>
                             </div>
                         </div>
-                        <button className='btn waves-effect waves-light' type='submit' name='action'>Submit
+                        <button className='btn waves-effect waves-light' onClick={this.stopTimer.bind(this)} type='submit' name='action'>Submit
                             <i className="material-icons right">send</i>
                         </button>
                     </form>
