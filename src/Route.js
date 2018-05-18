@@ -28,19 +28,24 @@ const timer = {
         console.log(path)
         time = Date.now()
         if (path === '/account/user/file') {
-            //return console.log('test')
-            return (dispatch) => {
-                return fetch(ApplicationConf.admin.getAverage(), {
+            console.log('test')
+            return (
+                fetch(ApplicationConf.admin.getAverage(), {
                     method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
                     body: JSON.stringify({
-                        type: 'files',
-                        value: res
+                        type : "files",
+                        value : res
                     })
                 })
+                    .then(console.log('yes'))
+                    .then(console.log('test'))
                     .catch((err) => {
                         toastError(err)
                     })
-            }
+            )
         }
     }
 }
