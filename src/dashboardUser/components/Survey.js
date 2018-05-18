@@ -78,7 +78,7 @@ class Survey extends Component {
                                 </p>
                             </div>
                         </div>
-                        <button className="btn waves-effect waves-light" onClick={this.stopTimer.bind(this)} type="submit" name="action" style={{background:'#1B2B66', padding:'2%', margin: '0 0 8px 0'}}>Submit
+                        <button className="btn waves-effect waves-light" onClick={this.stopTimer.bind(this)} type="submit" name="action">Submit
                             <i className="material-icons right">send</i>
                         </button>
                     </form>
