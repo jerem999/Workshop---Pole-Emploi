@@ -20,7 +20,7 @@ class Survey extends Component {
     stopTimer() {
         console.log(this.props.location.pathname)
         this.props.timer.stop(this.props.location.pathname)
-        this.props.history.push('/account/user')
+        {/*this.props.history.push('/account/user')*/}
     }
 
     render() {

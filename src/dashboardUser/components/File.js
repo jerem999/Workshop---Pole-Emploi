@@ -20,7 +20,7 @@ class File extends Component {
     stopTimer() {
         console.log(this.props.location.pathname)
         this.props.timer.stop(this.props.location.pathname)
-        this.props.history.push('/account/user')
+        {/*this.props.history.push('/account/user')*/}
     }
 
     render() {
@@ -52,7 +52,7 @@ class File extends Component {
                         <div className='file-field input-field'>
                             <div className='btn'>
                                 <span>Importer</span>
-                                <input type='file' multiple/>
+                                <input type='file' className='validate' required/>
                             </div>
                             <div className='file-path-wrapper'>
                                 <input className='file-path validate' type='text' placeholder='Importer un document'/>
