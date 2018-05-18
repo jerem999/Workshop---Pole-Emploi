@@ -58,7 +58,7 @@ class File extends Component {
                                 <input className='file-path validate' type='text' placeholder='Importer un document'/>
                             </div>
                         </div>
-                        <button className='btn waves-effect waves-light' onClick={this.stopTimer.bind(this)} type='submit' name='action'>Submit
+                        <button className='btn waves-effect waves-light' type='submit' name='action'>Submit
                             <i className='material-icons right'>send</i>
                         </button>
                     </form>

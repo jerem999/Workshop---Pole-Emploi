@@ -47,13 +47,13 @@ class Survey extends Component {
                     </div>
                 </nav>
                 <div className="row">
-                    <form className="col s4 offset-s4" action="#" style={{border: '1px solid lightgrey', borderRadius: '15px', marginTop: '2%'}}>
+                    <form className="col s4 offset-s4 borderForm" action="#">
                         <div className="row">
                             <div className="col s12">
                                 <p>Avez-vous déjà travaillé?</p>
                                 <p>
                                     <label>
-                                        <input name="group1" type="radio" />
+                                        <input name="group1" type="radio" required/>
                                         <span>Oui</span>
                                     </label>
                                 </p>
@@ -66,7 +66,7 @@ class Survey extends Component {
                                 <p>Êtes-vous en situation de handicap?</p>
                                 <p>
                                     <label>
-                                        <input name="group2" type="radio" />
+                                        <input name="group2" type="radio" required/>
                                         <span>Oui</span>
                                     </label>
                                 </p>
@@ -78,7 +78,7 @@ class Survey extends Component {
                                 </p>
                             </div>
                         </div>
-                        <button className="btn waves-effect waves-light" onClick={this.stopTimer.bind(this)} type="submit" name="action">Submit
+                        <button className='btn waves-effect waves-light' type='submit' name='action'>Submit
                             <i className="material-icons right">send</i>
                         </button>
                     </form>
