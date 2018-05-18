@@ -2,7 +2,18 @@ import React, { Component } from 'react'
 import '../../css/survey.css'
 
 class Survey extends Component {
-  componentDidMount() {
+    constructor() {
+        super()
+        this.state = { value: 0 }
+        this._increase()
+    }
+    
+    _increase() {
+        this.setState({ value: this.state.value + 1 })
+        setTimeout(this._increase.bind(this), 1000)
+    }
+
+    componentDidMount() {
         this.props.timer.start()
     }
 
@@ -13,6 +24,15 @@ class Survey extends Component {
     }
 
     render() {
+        console.log(this.state.value)
+        if (this.state.value===10) {
+            alert('remplissez')
+            this.state.value = 11
+        }
+        if (this.state.value===20) {
+            alert('hotesse')
+            this.state.value = 21
+        }
         return (
             <div>
                 <nav>
@@ -58,7 +78,7 @@ class Survey extends Component {
                                 </p>
                             </div>
                         </div>
-                        <button className="btn waves-effect waves-light" type="submit" name="action" style={{background:'#1B2B66', padding:'2%', margin: '0 0 8px 0'}}>Submit
+                        <button className="btn waves-effect waves-light" onClick={this.stopTimer.bind(this)} type="submit" name="action" style={{background:'#1B2B66', padding:'2%', margin: '0 0 8px 0'}}>Submit
                             <i className="material-icons right">send</i>
                         </button>
                     </form>

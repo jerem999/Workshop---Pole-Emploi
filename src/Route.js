@@ -11,6 +11,9 @@ import Footer from './home/components/Footer'
 import Files from './dashboardUser/components/File'
 import Form from './dashboardUser/components/Form'
 import Survey from './dashboardUser/components/Survey'
+import ApplicationConf from './conf/ApplicationConf'
+import { toastError } from './utils/MaterializeUtil';
+import { push } from 'react-router-redux'
 
 let time
 const timer = {
@@ -19,12 +22,26 @@ const timer = {
     },
     stop: (path) => {
         const finalTime = new Date(Date.now() - time)
-        const res = {
-            minutes: finalTime.getMinutes(),
-            seconds: finalTime.getSeconds()
-        }
+        const res = finalTime.getSeconds()
         console.log(path, res)
+        console.log(res)
+        console.log(path)
         time = Date.now()
+        if (path === '/account/user/file') {
+            //return console.log('test')
+            return (dispatch) => {
+                return fetch(ApplicationConf.admin.getAverage(), {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        type: 'files',
+                        value: res
+                    })
+                })
+                    .catch((err) => {
+                        toastError(err)
+                    })
+            }
+        }
     }
 }
 

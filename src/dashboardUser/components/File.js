@@ -2,8 +2,19 @@ import React, { Component } from 'react'
 import '../../css/file.css'
 
 class File extends Component {
-  componentDidMount() {
+    componentDidMount() {
         this.props.timer.start()
+    }
+
+    constructor() {
+        super()
+        this.state = { value: 0 }
+        this._increase()
+    }
+    
+    _increase() {
+        this.setState({ value: this.state.value + 1 })
+        setTimeout(this._increase.bind(this), 1000)
     }
 
     stopTimer() {
@@ -13,6 +24,15 @@ class File extends Component {
     }
 
     render() {
+        console.log(this.state.value)
+        if (this.state.value===10) {
+            alert('remplissez')
+            this.state.value = 11
+        }
+        if (this.state.value===20) {
+            alert('hotesse')
+            this.state.value = 21
+        }
         return (
             <div>
                 <nav>
