@@ -14,7 +14,7 @@ class DashboardUser extends Component {
 
     incrementNbClic() {
         if (this.state.nbclics >= 10) {
-            alert('Veuillez finir de completer avant de valider')
+            alert('Ce bouton n\'est pas cliquable')
         }
         this.setState(prevState => {
             return {

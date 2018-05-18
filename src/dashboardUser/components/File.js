@@ -11,7 +11,7 @@ class File extends Component {
         this.state = { value: 0 }
         this._increase()
     }
-    
+
     _increase() {
         this.setState({ value: this.state.value + 1 })
         setTimeout(this._increase.bind(this), 1000)
@@ -20,17 +20,17 @@ class File extends Component {
     stopTimer() {
         console.log(this.props.location.pathname)
         this.props.timer.stop(this.props.location.pathname)
-        this.props.history.push('/account/user')
+        {/*this.props.history.push('/account/user')*/}
     }
 
     render() {
         console.log(this.state.value)
         if (this.state.value===10) {
-            alert('remplissez')
+            alert('Veuillez choisir un fichier à importer avant de continuer')
             this.state.value = 11
         }
         if (this.state.value===20) {
-            alert('hotesse')
+            alert('Une hôtesse à été prévenu de vos erreurs et va venir vous aider')
             this.state.value = 21
         }
         return (
@@ -52,13 +52,13 @@ class File extends Component {
                         <div className='file-field input-field'>
                             <div className='btn'>
                                 <span>Importer</span>
-                                <input type='file' multiple/>
+                                <input type='file' className='validate' required/>
                             </div>
                             <div className='file-path-wrapper'>
                                 <input className='file-path validate' type='text' placeholder='Importer un document'/>
                             </div>
                         </div>
-                        <button className='btn waves-effect waves-light' onClick={this.stopTimer.bind(this)} type='submit' name='action'>Submit
+                        <button className='btn waves-effect waves-light' type='submit' name='action'>Submit
                             <i className='material-icons right'>send</i>
                         </button>
                     </form>
